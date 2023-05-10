@@ -69,7 +69,7 @@ class ChoicesListPrompt(Prompt):
                         comp = chat_completion(prompt,timeout=10)
                         newv = comp['choices'][0]['message']['content'].strip()
                         newv = newv.strip(string.punctuation)
-                        if lowercase:
+                        if self.lowercase:
                             newv = newv.lower()
                         if newv in self.choices:
                             print(f'Successfully matched {v} to {newv}')
